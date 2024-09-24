@@ -1,0 +1,146 @@
+syntax = "proto3";
+
+package school;
+
+option go_package = "https://github.com/Yous113/Distributed-systems-/blob/main/grpc/school";
+
+service StudentService {
+  rpc GetStudent (GetStudentRequest) returns (GetStudentResponse);
+  rpc CreateStudent (CreateStudentRequest) returns (CreateStudentResponse);
+  rpc UpdateStudent (UpdateStudentRequest) returns (UpdateStudentResponse);
+  rpc DeleteStudent (DeleteStudentRequest) returns (DeleteStudentResponse);
+}
+
+service CourseService {
+  rpc GetCourse (GetCourseRequest) returns (GetCourseResponse);
+  rpc CreateCourse (CreateCourseRequest) returns (CreateCourseResponse);
+  rpc UpdateCourse (UpdateCourseRequest) returns (UpdateCourseResponse);
+  rpc DeleteCourse (DeleteCourseRequest) returns (DeleteCourseResponse);
+}
+
+service TeacherService {
+  rpc GetTeacher (GetTeacherRequest) returns (GetTeacherResponse);
+  rpc CreateTeacher (CreateTeacherRequest) returns (CreateTeacherResponse);
+  rpc UpdateTeacher (UpdateTeacherRequest) returns (UpdateTeacherResponse);
+  rpc DeleteTeacher (DeleteTeacherRequest) returns (DeleteTeacherResponse);
+}
+
+// Student Messages
+message GetStudentRequest {
+  int32 student_id = 1;
+}
+
+message GetStudentResponse {
+  Student student = 1;
+}
+
+message CreateStudentRequest {
+  Student student = 1;
+}
+
+message CreateStudentResponse {
+  Student student = 1;
+}
+
+message UpdateStudentRequest {
+  Student student = 1;
+}
+
+message UpdateStudentResponse {
+  Student student = 1;
+}
+
+message DeleteStudentRequest {
+  int32 student_id = 1;
+}
+
+message DeleteStudentResponse {
+  bool success = 1;
+}
+
+message Student {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  repeated int32 course_ids = 4;
+}
+
+// Course Messages
+message GetCourseRequest {
+  int32 course_id = 1;
+}
+
+message GetCourseResponse {
+  Course course = 1;
+}
+
+message CreateCourseRequest {
+  Course course = 1;
+}
+
+message CreateCourseResponse {
+  Course course = 1;
+}
+
+message UpdateCourseRequest {
+  Course course = 1;
+}
+
+message UpdateCourseResponse {
+  Course course = 1;
+}
+
+message DeleteCourseRequest {
+  int32 course_id = 1;
+}
+
+message DeleteCourseResponse {
+  bool success = 1;
+}
+
+message Course {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  repeated int32 student_ids = 4;
+}
+
+// Teacher Messages
+message GetTeacherRequest {
+  int32 teacher_id = 1;
+}
+
+message GetTeacherResponse {
+  Teacher teacher = 1;
+}
+
+message CreateTeacherRequest {
+  Teacher teacher = 1;
+}
+
+message CreateTeacherResponse {
+  Teacher teacher = 1;
+}
+
+message UpdateTeacherRequest {
+  Teacher teacher = 1;
+}
+
+message UpdateTeacherResponse {
+  Teacher teacher = 1;
+}
+
+message DeleteTeacherRequest {
+  int32 teacher_id = 1;
+}
+
+message DeleteTeacherResponse {
+  bool success = 1;
+}
+
+message Teacher {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  repeated int32 course_ids = 4;
+}
