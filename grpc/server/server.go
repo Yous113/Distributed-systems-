@@ -5,14 +5,17 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Yous113/Distributed-systems-/GRPC/school"
+	pb "github.com/Yous113/Distributed-systems-/grpc/school" // Import the generated code
 	"google.golang.org/grpc"
 )
 
 type server struct {
-	pb.UnimplementedSchoolServer
+	pb.UnimplementedCourseServiceServer  // Embedding the generated gRPC server for CourseService
+	pb.UnimplementedStudentServiceServer // Embedding the generated gRPC server for StudentService
+	pb.UnimplementedTeacherServiceServer // Embedding the generated gRPC server for TeacherService
 }
 
+// Implement methods for CourseService
 func (s *server) GetCourse(ctx context.Context, req *pb.GetCourseRequest) (*pb.GetCourseResponse, error) {
 	course := &pb.Course{
 		Id:          req.CourseId,
@@ -23,17 +26,7 @@ func (s *server) GetCourse(ctx context.Context, req *pb.GetCourseRequest) (*pb.G
 	return &pb.GetCourseResponse{Course: course}, nil
 }
 
-func (s *server) CreateCourse(ctx context.Context, req *pb.CreateCourseRequest) (*pb.CreateCourseResponse, error) {
-	return &pb.CreateCourseResponse{Course: req.Course}, nil
-}
-
-func (s *server) UpdateCourse(ctx context.Context, req *pb.UpdateCourseRequest) (*pb.UpdateCourseResponse, error) {
-	return &pb.UpdateCourseResponse{Course: req.Course}, nil
-}
-
-func (s *server) DeleteCourse(ctx context.Context, req *pb.DeleteCourseRequest) (*pb.DeleteCourseResponse, error) {
-	return &pb.DeleteCourseResponse{Success: true}, nil
-}
+// Implement other services similarly...
 
 func main() {
 	lis, err := net.Listen("tcp", ":50051")
@@ -42,7 +35,9 @@ func main() {
 	}
 
 	s := grpc.NewServer()
-	pb.RegisterSchoolServer(s, &server{})
+	pb.RegisterCourseServiceServer(s, &server{})  // Register CourseService
+	pb.RegisterStudentServiceServer(s, &server{}) // Register StudentService
+	pb.RegisterTeacherServiceServer(s, &server{}) // Register TeacherService
 
 	log.Println("Server is running on port 50051...")
 	if err := s.Serve(lis); err != nil {
