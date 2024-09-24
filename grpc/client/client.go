@@ -6,7 +6,7 @@ import (
     "time"
 
     "google.golang.org/grpc"
-    pb "https://github.com/Yous113/Distributed-systems-/tree/main/grpc/school" 
+    pb "https://github.com/Yous113/Distributed-systems-/tree/50a2e0f2b96f68987e18eba4241a67a373bdfb61/grpc/school" 
 )
 
 func main() {
