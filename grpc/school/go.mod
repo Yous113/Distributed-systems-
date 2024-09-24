@@ -1,4 +1,4 @@
-module schoolmod
+module github.com/Yous113/Distributed-systems-/GRPC/school
 
 go 1.23.1
 
