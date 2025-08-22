@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	StudentService_GetStudent_FullMethodName    = "/school.StudentService/GetStudent"
-	StudentService_CreateStudent_FullMethodName = "/school.StudentService/CreateStudent"
-	StudentService_UpdateStudent_FullMethodName = "/school.StudentService/UpdateStudent"
-	StudentService_DeleteStudent_FullMethodName = "/school.StudentService/DeleteStudent"
+	StudentService_GetStudent_FullMethodName    = "/grpc.StudentService/GetStudent"
+	StudentService_CreateStudent_FullMethodName = "/grpc.StudentService/CreateStudent"
+	StudentService_UpdateStudent_FullMethodName = "/grpc.StudentService/UpdateStudent"
+	StudentService_DeleteStudent_FullMethodName = "/grpc.StudentService/DeleteStudent"
 )
 
 // StudentServiceClient is the client API for StudentService service.
@@ -210,7 +210,7 @@ func _StudentService_DeleteStudent_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var StudentService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "school.StudentService",
+	ServiceName: "grpc.StudentService",
 	HandlerType: (*StudentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -235,10 +235,10 @@ var StudentService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	CourseService_GetCourse_FullMethodName    = "/school.CourseService/GetCourse"
-	CourseService_CreateCourse_FullMethodName = "/school.CourseService/CreateCourse"
-	CourseService_UpdateCourse_FullMethodName = "/school.CourseService/UpdateCourse"
-	CourseService_DeleteCourse_FullMethodName = "/school.CourseService/DeleteCourse"
+	CourseService_GetCourse_FullMethodName    = "/grpc.CourseService/GetCourse"
+	CourseService_CreateCourse_FullMethodName = "/grpc.CourseService/CreateCourse"
+	CourseService_UpdateCourse_FullMethodName = "/grpc.CourseService/UpdateCourse"
+	CourseService_DeleteCourse_FullMethodName = "/grpc.CourseService/DeleteCourse"
 )
 
 // CourseServiceClient is the client API for CourseService service.
@@ -426,7 +426,7 @@ func _CourseService_DeleteCourse_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CourseService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "school.CourseService",
+	ServiceName: "grpc.CourseService",
 	HandlerType: (*CourseServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -451,10 +451,10 @@ var CourseService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	TeacherService_GetTeacher_FullMethodName    = "/school.TeacherService/GetTeacher"
-	TeacherService_CreateTeacher_FullMethodName = "/school.TeacherService/CreateTeacher"
-	TeacherService_UpdateTeacher_FullMethodName = "/school.TeacherService/UpdateTeacher"
-	TeacherService_DeleteTeacher_FullMethodName = "/school.TeacherService/DeleteTeacher"
+	TeacherService_GetTeacher_FullMethodName    = "/grpc.TeacherService/GetTeacher"
+	TeacherService_CreateTeacher_FullMethodName = "/grpc.TeacherService/CreateTeacher"
+	TeacherService_UpdateTeacher_FullMethodName = "/grpc.TeacherService/UpdateTeacher"
+	TeacherService_DeleteTeacher_FullMethodName = "/grpc.TeacherService/DeleteTeacher"
 )
 
 // TeacherServiceClient is the client API for TeacherService service.
@@ -642,7 +642,7 @@ func _TeacherService_DeleteTeacher_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var TeacherService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "school.TeacherService",
+	ServiceName: "grpc.TeacherService",
 	HandlerType: (*TeacherServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

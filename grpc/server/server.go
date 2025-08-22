@@ -5,7 +5,8 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Yous113/Distributed-systems-/grpc/school" // Import the generated code
+	pb "grpc/school" // Import the generated code
+
 	"google.golang.org/grpc"
 )
 

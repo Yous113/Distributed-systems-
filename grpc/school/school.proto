@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package school;
+package grpc;
 
-option go_package = "github.com/Yous113/Distributed-systems-/school";
+option go_package = "./school";
 
 service StudentService {
   rpc GetStudent (GetStudentRequest) returns (GetStudentResponse);

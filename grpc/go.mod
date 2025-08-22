@@ -1,9 +1,8 @@
-module github.com/Yous113/Distributed-systems/grpc
+module grpc
 
 go 1.23.1
 
 require (
-	github.com/Yous113/Distributed-systems- v0.0.0-20240924172920-0170bbd5bf37
 	google.golang.org/grpc v1.67.0
 	google.golang.org/protobuf v1.34.2
 )
